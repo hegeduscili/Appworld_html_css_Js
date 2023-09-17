@@ -1,6 +1,10 @@
 window.addEventListener('load', function(){
-    loadView('kezdooldal');
-
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        loadView(hash);
+    } else {
+        loadView('kezdooldal');
+    }
 
     this.window.addEventListener('hashchange', function(){
         const hash = window.location.hash.substring(1);
